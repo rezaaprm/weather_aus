@@ -40,3 +40,15 @@ with col2:
     ax.set_title('')
     ax.grid(True)
     st.pyplot(fig)
+
+col1, col2 = st.columns([0.5, 0.5], gap="medium")
+
+with col1:
+    fig, ax = plt.subplots(figsize=(8, 4))
+    df_heatmap = df[["MinTemp", "MaxTemp", "Rainfall", "Evaporation", "Sunshine"]].corr()
+    sns.heatmap(data=df_heatmap, annot=True)
+    ax.set_xlabel('')
+    ax.set_ylabel('')
+    ax.set_title('')
+    ax.grid(True)
+    st.pyplot(fig)
